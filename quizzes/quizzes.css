@@ -1,0 +1,219 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+video#video-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Ensure the video is behind other content */
+}
+
+
+.container {
+  max-width: 900px; /* Adjust as per your layout */
+  margin: 0 auto; /* Center align the container */
+  padding: 30px;
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #ffffff;
+  background-color: rgb(4, 18, 47, 0.8); /* Background color of the box */
+      padding: 10px 20px; /* Padding inside the box */
+      border-radius: 8px; /* Optional: Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for a subtle effect */
+  
+  }
+}
+header {
+  color: #1c355f;
+  padding: 20px;
+  text-align: center;
+  font-size: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quizzes {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px; /* Adjust height as needed */
+  margin-top: 50px;
+  perspective: 2000px; /* Perspective for 3D effect */
+}
+
+.quiz-card {
+  position: absolute;
+  width: 300px; /* Adjust card width as needed */
+  height: 180px; /* Adjust card height as needed */
+  background-color: #5783db; /* Dark blue */
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+  transform-origin: center right; /* Origin for rotation */
+  color: #ffffff; /* Font color */
+  font-family: 'Arial', sans-serif; /* Font family */
+  text-align: center; /* Center text */
+}
+
+.quiz-card.active {
+  width: 400px; /* Larger width for the active card */
+  height: 240px; /* Larger height for the active card */
+  z-index: 2; /* Bring to front */
+  transform: translateX(0) scale(1.1); /* Active card transformation */
+  background-color: #0d2468; /* Dark brown for active card */
+}
+
+.quiz-card:not(.active) {
+  opacity: 0.7; /* Reduced opacity for inactive cards */
+  transform: translateX(50%) scale(0.8); /* Translation and scaling for other cards */
+  z-index: 1; /* Move to back */
+}
+
+.quiz-card:hover {
+  background-color: #c1a65c; /* Darker blue on hover */
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3; /* Ensure arrows are above cards */
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.options {
+  list-style-type: none;
+  padding: 0;
+}
+
+.options li {
+  margin-bottom: 10px;
+}
+
+.options input[type="radio"] {
+  display: none;
+}
+
+.options label {
+  display: block;
+  padding: 10px;
+  border: 2px solid #4682b4;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.options input[type="radio"]:checked + label {
+  background-color: #add8e6;
+  color: #4682b4;
+}
+
+label.correct {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#submit-btn,
+#prev-btn,
+#next-btn {
+  background-color: #4682b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+#submit-btn:hover,
+#prev-btn:hover,
+#next-btn:hover {
+  background-color: #315f7b;
+}

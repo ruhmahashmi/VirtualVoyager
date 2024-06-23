@@ -1,0 +1,297 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f5f9; /* Light blue background */
+}
+
+/* Header */
+header {
+    background-color: #28a745; /* Green header background */
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-title {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em;
+    color: #ffffff; /* White text color */
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Play and pause buttons */
+#play-pause-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: rgba(52, 58, 64, 0.8);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#play-pause-container button {
+    margin-right: 20px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#play-pause-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Main container for flex layout */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+    flex-wrap: wrap; /* Allows wrapping when content exceeds width */
+    gap: 20px; /* Gap between flex items */
+}
+
+.content-container {
+    flex: 1 1 50%; /* Take up half of the available width */
+    padding: 20px;
+}
+
+.side-container {
+    flex: 1 1 25%; /* Take up quarter of the available width */
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; /* Add margin for separation from content container */
+}
+
+/* Map */
+#map {
+    height: 400px;
+    width: 100%;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline */
+#timeline {
+    width: 100%;
+    background-color: #d9f7dc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(20, 87, 34, 0.1);
+    margin-bottom: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-item h3 {
+    color: #115309;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: #637656;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Quiz container */
+#quiz-container {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#quiz-container h2 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+#question-container,
+#options-container {
+    margin-bottom: 15px;
+}
+
+.quiz-option {
+    font-size: 1.1em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+#submit-answer {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green button */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-answer:hover {
+    background-color: #218838;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Image container */
+#image-container {
+    text-align: center;
+}
+
+#image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Slideshow container */
+#slideshow-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px; /* Reduced gap between slides */
+    padding-bottom: 10px; /* Reduced bottom padding */
+    max-width: 800px; /* Limit the width of the slideshow */
+    margin: 0 auto; /* Center the slideshow */
+}
+
+/* Individual slide */
+.slide {
+    width: 90%; /* Adjusted slide width */
+    height: 0;
+    padding-top: 56.25%; /* 1:1.78 aspect ratio (16:9) */
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.slide:hover img {
+    transform: scale(1.1);
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px; /* Increased padding for better readability */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.slide-content h2,
+.slide-content p {
+    color: #ffffff; /* White text color */
+    margin: 0;
+}
+
+.slide-content h2 {
+    font-size: 1.8em; /* Adjusted font size */
+    margin-bottom: 8px; /* Increased margin for better separation */
+}
+
+.slide-content p {
+    font-size: 1.1em; /* Adjusted font size */
+}
+
+/* Phrases list */
+#phrase-display {
+    background-color: #ffffff; /* White background */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px; /* Increased bottom margin for separation */
+}
+
+#phrase-display h2 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+#phrases-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.phrase {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.phrase:hover {
+    background-color: #e9ecef;
+}
+
+/* Audio player */
+#audio-player {
+    background-color: #ffffff; /* White background */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px; /* Add top margin for separation */
+}
+
+#audio-player h2 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+#audio {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styling can be added as needed */

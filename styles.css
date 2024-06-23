@@ -1,0 +1,241 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    background-color: #f0f8ff;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f8ff;
+    padding: 20px;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-gif {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.search-container {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.search-container input {
+    padding: 12px; /* Increased padding for better visual appeal */
+    width: 230px; /* Set a specific width to make the search bar longer */
+    font-size: 16px;
+    border: 2px solid #ccc; /* Add a subtle border for definition */
+    outline: none;
+    border-radius: 20px; /* Rounded border corners */
+    background-color: #f0f0f0; /* Light background color */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for visual feedback */
+}
+
+.search-container input:focus {
+    border-color: #4682b4; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Add a subtle shadow on focus */
+}
+
+.animation-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.airplane {
+    width: 40px;
+    height: 40px;
+    background: url('airplane-icon.png') no-repeat center center / contain; /* Replace with your airplane icon */
+    position: absolute;
+    animation: fly 5s linear infinite;
+}
+
+.stripes {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #3498db, #e74c3c, #f1c40f);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: stripeMove 2s linear infinite;
+}
+
+#search {
+    padding: 10px;
+    font-size: 1em;
+}
+
+#map {
+    height: calc(100vh - 80px);
+    width: 100%;
+}
+
+@keyframes fly {
+    0% { left: -50px; }
+    100% { left: 100%; }
+}
+
+@keyframes stripeMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+.boat {
+    width: 30px;
+    height: 26px;
+    background: url('littleboat.png') no-repeat center center / contain;
+    position: absolute;
+    animation: fly 15s linear infinite;
+    z-index: 999; /* Ensure it appears above other elements */
+    bottom: 2px; /* Adjust to position the boat above the header */
+}
+
+/* CSS for the header title */
+.header-title {
+    font-family: 'Lobster', cursive; /* Apply Lobster font or any desired font */
+    font-size: 2.5em; /* Adjust font size as needed */
+    margin: 0;
+    color: #196fa4; /* Choose a suitable color */
+    letter-spacing: 1px; /* Adjust letter spacing for better readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add subtle text shadow for depth */
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    color: #5e4d0d;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px 12px; /* Optional: Add padding inside each link for better clickability */
+}
+
+.popup-container {
+    max-width: 300px;
+    padding: 15px; /* Increased padding for better spacing */
+    background-color: #c7b198; /* Brown shade */
+    border: 2px solid #65513e; /* Dark brown border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.popup-container h3 {
+    margin-top: 0;
+    font-size: 1.8em; /* Larger font size */
+    color: #daeafb; /* Light blue for heading */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+.popup-content {
+    margin-top: 15px; /* Increased margin */
+}
+
+.popup-content p {
+    margin-bottom: 12px; /* Larger bottom margin */
+    font-size: 1.1em; /* Slightly larger font size */
+    color: #65513e; /* Dark brown text color */
+}
+
+.popup-content a {
+    display: inline-block;
+    padding: 10px 16px; /* Increased padding */
+    background-color: #daeafb; /* Light blue background */
+    color: #65513e; /* Dark brown text color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.popup-content a:hover {
+    background-color: #346094; /* Dark blue hover color */
+    color: #fff; /* White text color on hover */
+}
+
+/* styles.css */
+
+.chat-container {
+    position: absolute;
+    bottom: 20px;
+    left: 200px; /* Adjust as needed to position next to character bot */
+    width:200px; /* Adjust the width as needed */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    z-index: 1000; /* Ensure chat is above other content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+#chatbox {
+    max-height: 300px; /* Limit the maximum height of the chatbox */
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#question {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 60%;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.character-chat-container {
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    z-index: 1000; /* Ensure it is on top of other elements */
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom */
+}
+
+.character-bot {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+    margin: 0 -3 px; /* Add margin to position the character bot */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes</title>
+    <link rel="stylesheet" href="quizzes.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <h1>Test your Knowledge with these Fun Quizzes!
+        </div>
+    </header>
+    <main>
+        <section id="quizzes">
+            <div class="quiz-card active" onclick="openQuizModal('quiz1')">Explore the World: Test Your Geographical Skills!</div>
+            <div class="quiz-card" onclick="openQuizModal('quiz2')">Journey Through Time: Discover the Past!</div>
+            <div class="quiz-card" onclick="openQuizModal('quiz3')">Navigate the Political Landscape: Test Your Understanding!</div>
+            <div class="quiz-card" onclick="openQuizModal('quiz4')">Unleash Your Creativity: Dive into the World of Arts!</div>
+            <div class="arrow arrow-left" onclick="prevQuizCard()">&#8249;</div>
+            <div class="arrow arrow-right" onclick="nextQuizCard()">&#8250;</div>
+        </section>
+    </main>
+
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuizModal()">&times;</span>
+            <div id="quiz-container"></div>
+            <button id="submit-btn" onclick="checkAnswer()">Submit</button>
+            <button id="prev-btn" onclick="prevQuestion()">Previous</button>
+            <button id="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+    <video autoplay muted loop id="video-bg">
+        <source src="globe.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <audio id="bg-music" autoplay loop>
+        <source src="curious.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script src="quizzes.js"></script>
+</body>
+</html>

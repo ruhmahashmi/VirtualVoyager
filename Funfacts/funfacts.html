@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts About Countries</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: url('earth.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            animation: fadeIn 2s;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #1e90ff;
+        }
+        .fact {
+            font-size: 1.2em;
+            margin: 10px 0;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            transform: translateY(20px);
+        }
+        .fact::before {
+            content: "🌍 ";
+        }
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1c86ee;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts About Countries</h1>
+        <div id="facts-container"></div>
+        <button onclick="displayRandomFacts()">Show More Facts</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Canada has the longest coastline of any country in the world, stretching over 202,080 kilometers.",
+            "Australia is wider than the moon.",
+            "Russia has a larger surface area than Pluto.",
+            "There are more pyramids in Sudan than in Egypt.",
+            "France is the most visited country in the world.",
+            "Japan has more than 6,800 islands.",
+            "Brazil is the only country in South America that speaks Portuguese.",
+            "China has only one time zone despite being roughly the same size as the continental USA.",
+            "Greenland is the world's largest island and is an autonomous territory within the Kingdom of Denmark.",
+            "The United States has no official language at the federal level.",
+            "Saudi Arabia is the largest country in the world without a river.",
+            "Iceland is the only country with no mosquitoes.",
+            "Nigeria has the highest number of twins born per year.",
+            "The Philippines consists of 7,641 islands.",
+            "Norway has a town called Hell, and it freezes over every winter."
+        ];
+
+        function displayRandomFacts() {
+            const factsContainer = document.getElementById('facts-container');
+            factsContainer.innerHTML = '';
+            const randomFacts = getRandomFacts(5);
+            randomFacts.forEach((fact, index) => {
+                const factElement = document.createElement('div');
+                factElement.className = 'fact';
+                factElement.textContent = fact;
+                factsContainer.appendChild(factElement);
+                setTimeout(() => {
+                    factElement.style.opacity = 1;
+                    factElement.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        }
+
+        function getRandomFacts(num) {
+            const shuffled = facts.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
+        window.onload = displayRandomFacts;
+    </script>
+</body>
+</html>

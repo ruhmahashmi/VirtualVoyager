@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Voyager</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-geosearch@3.0.0/dist/geosearch.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="plane.gif" alt="GIF Image" class="header-gif">
+            <div class="header-title">Virtual Voyager</div>
+        </div>
+        <nav class="links">
+            <b>
+                <a href="about.html">About</a>
+                <a href="quizzes/quizzes.html">Quizzes</a>
+                <a href="Funfacts/funfacts.html">Fun Facts</a>
+                <a href="contact.html">Contact</a>
+            </b>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search & Explore a Country!">
+    </div>
+    <div class="animation-container">
+        <div class="boat"></div>
+        <div class="stripes"></div>
+    </div>
+    <div id="map"></div>
+
+    <!-- Chatbot Section -->
+    <div class="character-chat-container">
+        <img src="wafflehacks.png" alt="Character Bot" class="character-bot"> <!-- Replace with your character bot image -->
+        <div class="chat-container">
+            <div id="chatbox"></div>
+            <form id="question-form">
+                <input type="text" id="question" placeholder="Ask a question...">
+                <button type="submit" id="submit-btn">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+
+    <audio id="bg-music" autoplay loop>
+        <source src="travel.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>

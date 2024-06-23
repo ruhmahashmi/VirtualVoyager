@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Showcase of Pakistan</title>
+    <link rel="stylesheet" href="pakistan.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-title">Pakistan</div>
+        </div>
+    </header>
+
+    <audio id="bg-music" autoplay loop>
+        <source src="Pasori.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="main-container">
+        <div class="content-container">
+            <div id="timeline"></div>
+        </div>
+
+        <div class="side-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="side-container">
+            <div id="quiz-container">
+                <h2>How much do you know about Pakistan?</h2>
+                <div id="question-container"></div>
+                <div id="options-container"></div>
+                <button id="submit-answer">Submit Answer</button>
+                <p id="feedback"></p>
+            </div>
+            <div id="image-container">
+                <img src="pakflag.jpg" alt="Quiz Image">
+            </div>
+        </div>
+
+        <div class="content-container">
+            <section id="slideshow-container">
+                <div class="slide">
+                    <img src="urdu.jpg" alt="Languages in Pakistan">
+                    <div class="slide-content">
+                        <h2>Languages in Pakistan</h2>
+                        <p>Pakistan is home to several languages, including Urdu, Punjabi, Sindhi, Pashto, and others.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="countries/pkflag.jpg" alt="Cultural diversity in Pakistan">
+                    <div class="slide-content">
+                        <h2>Cultural Diversity</h2>
+                        <p>Pakistan boasts a rich cultural diversity influenced by various ethnic groups and traditions.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="md.jpg" alt="Historical heritage sites">
+                    <div class="slide-content">
+                        <h2>Historical Heritage</h2>
+                        <p>The country is home to ancient civilizations and historical landmarks like Mohenjo-daro and Taxila.</p>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </section>
+        </div>
+
+
+        <div class="side-container">
+            <section id="phrase-display">
+                <h2>Common Urdu Phrases</h2>
+                <div id="phrases-list"></div>
+            </section>
+
+            <section id="audio-player">
+                <h2>Audio Player</h2>
+                <audio id="audio" controls>
+                    <source id="audio-source" src="" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </section>
+        </div>
+    </div>
+
+    <!-- Play and Pause Buttons (Fixed at Bottom) -->
+    <div id="play-pause-container">
+        <div id="controls">
+            <button id="play-pause">Pause</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <script src="pakistantimeline.js"></script>
+    <script src="pakquiz.js"></script>
+    <script src="paktranslation.js"></script>
+    <script src="pakistan.js"></script>
+</body>
+</html>
